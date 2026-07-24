@@ -6,14 +6,41 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXCopyFilesBuildPhase section */
+		F4814FC0301399BE009B7CA2 /* Embed ExtensionKit Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(EXTENSIONS_FOLDER_PATH)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			name = "Embed ExtensionKit Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F4814FD7301399F3009B7CA2 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		F4B6452A3012A1A4002A1DF8 /* Scale App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Scale App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4814FAF301399BE009B7CA2 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		F4814FB1301399BE009B7CA2 /* ExtensionFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExtensionFoundation.framework; path = System/Library/Frameworks/ExtensionFoundation.framework; sourceTree = SDKROOT; };
+		F4814FB3301399BE009B7CA2 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = System/Library/Frameworks/Photos.framework; sourceTree = SDKROOT; };
+		F4814FC6301399F3009B7CA2 /* CryptoTokenKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoTokenKit.framework; path = System/Library/Frameworks/CryptoTokenKit.framework; sourceTree = SDKROOT; };
+		F4B6452A3012A1A4002A1DF8 /* Scale.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Scale.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		F4B6452C3012A1A4002A1DF8 /* Scale App */ = {
+		F4B6452C3012A1A4002A1DF8 /* Scale */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			path = "Scale App";
+			path = Scale;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -29,10 +56,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F4814FAE301399BE009B7CA2 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F4814FAF301399BE009B7CA2 /* Foundation.framework */,
+				F4814FB1301399BE009B7CA2 /* ExtensionFoundation.framework */,
+				F4814FB3301399BE009B7CA2 /* Photos.framework */,
+				F4814FC6301399F3009B7CA2 /* CryptoTokenKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F4B645213012A1A3002A1DF8 = {
 			isa = PBXGroup;
 			children = (
-				F4B6452C3012A1A4002A1DF8 /* Scale App */,
+				F4B6452C3012A1A4002A1DF8 /* Scale */,
+				F4814FAE301399BE009B7CA2 /* Frameworks */,
 				F4B6452B3012A1A4002A1DF8 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -40,7 +79,7 @@
 		F4B6452B3012A1A4002A1DF8 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F4B6452A3012A1A4002A1DF8 /* Scale App.app */,
+				F4B6452A3012A1A4002A1DF8 /* Scale.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -48,26 +87,28 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F4B645293012A1A3002A1DF8 /* Scale App */ = {
+		F4B645293012A1A3002A1DF8 /* Scale */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F4B645353012A1A5002A1DF8 /* Build configuration list for PBXNativeTarget "Scale App" */;
+			buildConfigurationList = F4B645353012A1A5002A1DF8 /* Build configuration list for PBXNativeTarget "Scale" */;
 			buildPhases = (
 				F4B645263012A1A3002A1DF8 /* Sources */,
 				F4B645273012A1A3002A1DF8 /* Frameworks */,
 				F4B645283012A1A3002A1DF8 /* Resources */,
+				F4814FC0301399BE009B7CA2 /* Embed ExtensionKit Extensions */,
+				F4814FD7301399F3009B7CA2 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				F4B6452C3012A1A4002A1DF8 /* Scale App */,
+				F4B6452C3012A1A4002A1DF8 /* Scale */,
 			);
-			name = "Scale App";
+			name = Scale;
 			packageProductDependencies = (
 			);
 			productName = "Scale App";
-			productReference = F4B6452A3012A1A4002A1DF8 /* Scale App.app */;
+			productReference = F4B6452A3012A1A4002A1DF8 /* Scale.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -82,10 +123,11 @@
 				TargetAttributes = {
 					F4B645293012A1A3002A1DF8 = {
 						CreatedOnToolsVersion = 26.3;
+						LastSwiftMigration = 2630;
 					};
 				};
 			};
-			buildConfigurationList = F4B645253012A1A3002A1DF8 /* Build configuration list for PBXProject "Scale App" */;
+			buildConfigurationList = F4B645253012A1A3002A1DF8 /* Build configuration list for PBXProject "Scale" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -99,7 +141,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F4B645293012A1A3002A1DF8 /* Scale App */,
+				F4B645293012A1A3002A1DF8 /* Scale */,
 			);
 		};
 /* End PBXProject section */
@@ -249,26 +291,42 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Scale/Scale.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VPG8LV8783;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "体脂秤";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "用于连接体脂秤读取体重数据";
+				INFOPLIST_KEY_NSHealthClinicalHealthRecordsShareUsageDescription = "用于连接体脂秤读取体重数据";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "用于连接体脂秤读取体重数据";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "用于连接体脂秤读取体重数据";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "shuhui.Scale-App";
+				PRODUCT_BUNDLE_IDENTIFIER = shuhui.scaleapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Scale/Scale-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -280,26 +338,41 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = Scale/Scale.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VPG8LV8783;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "体脂秤";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "用于连接体脂秤读取体重数据";
+				INFOPLIST_KEY_NSHealthClinicalHealthRecordsShareUsageDescription = "用于连接体脂秤读取体重数据";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "用于连接体脂秤读取体重数据";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "用于连接体脂秤读取体重数据";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "shuhui.Scale-App";
+				PRODUCT_BUNDLE_IDENTIFIER = shuhui.scaleapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
 				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Scale/Scale-Bridging-Header.h";
 				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -309,7 +382,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F4B645253012A1A3002A1DF8 /* Build configuration list for PBXProject "Scale App" */ = {
+		F4B645253012A1A3002A1DF8 /* Build configuration list for PBXProject "Scale" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F4B645333012A1A5002A1DF8 /* Debug */,
@@ -318,7 +391,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F4B645353012A1A5002A1DF8 /* Build configuration list for PBXNativeTarget "Scale App" */ = {
+		F4B645353012A1A5002A1DF8 /* Build configuration list for PBXNativeTarget "Scale" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F4B645363012A1A5002A1DF8 /* Debug */,
