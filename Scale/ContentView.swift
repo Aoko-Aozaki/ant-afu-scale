@@ -35,6 +35,11 @@ struct ContentView: View {
                 // 测到稳定值 → 写入健康
                 ble.onMeasurementReady = { m in
                     Task { @MainActor in
+                        // 读取最新保存的开关状态（闭包捕获的 profile 可能已过期）
+                        guard UserProfile.load().autoSyncHealth else {
+                            healthMessage = nil
+                            return
+                        }
                         do {
                             try await health.save(m)
                             healthMessage = "已同步到「健康」App"
@@ -147,6 +152,11 @@ struct ProfileView: View {
                         Text("女").tag(false)
                     }
                     .pickerStyle(.segmented)
+                }
+                Section {
+                    Toggle("测量后自动写入「健康」", isOn: $profile.autoSyncHealth)
+                } footer: {
+                    Text("关闭后，测量结果不会自动同步到 Apple「健康」App。")
                 }
             }
             .navigationTitle("我的资料")
