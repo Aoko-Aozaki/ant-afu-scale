@@ -4,7 +4,7 @@
 
 # Scale · 蚂蚁阿福体脂秤
 
-一个原生 iOS App，直接通过蓝牙连接蚂蚁阿福体脂秤，读取体重与阻抗，本地估算身体成分，并同步到 Apple「健康」。
+一个原生 iOS App，通过蓝牙连接蚂蚁阿福体脂秤，读取体重与阻抗，本地估算身体成分，并同步到 Apple「健康」。
 
 </div>
 
@@ -53,12 +53,10 @@ IPA 是没有签名的，直接装不上，需要用下面任一方式签名。*
 
 流程通常是：
 
-
-1. 提供你 iPhone 的 **UDID**（设备唯一标识）。获取方式：
-   - 用爱思助手连接手机后在设备信息里直接复制；或
+1. 提供你 iPhone 的 **UDID**（设备唯一标识）。
    - 手机 Safari 打开卖家给的 UDID 获取链接，安装一个描述文件即可读出。
 2. 卖家给你签名的证书（p12）和描述文件（mobileprovision）
-3. 用 **zsign** 之类支持改 Bundle ID 的工具重签名，**必须把 Bundle ID 改成描述文件里授权的那个**，例如：
+3. 用 [**zsign**](zhlynn/zsign) 之类支持改 Bundle ID 的工具重签名，**必须把 Bundle ID 改成描述文件里授权的那个**，例如：
 
    ```bash
    zsign -k cert.p12 -p 密码 -m profile.mobileprovision -b 描述文件里的BundleID -o Scale-signed.ipa Scale.v0.1.ipa
@@ -68,7 +66,7 @@ IPA 是没有签名的，直接装不上，需要用下面任一方式签名。*
 
 > ⚠️ **别直接用爱思助手的「证书签名」功能**：它不改 Bundle ID，签完打开会报 `Missing com.apple.developer.healthkit entitlement`，数据无法写入苹果健康。
 >
-> 原因：签名里的 `application-identifier` 必须逐字等于「TeamID + Info.plist 里的 CFBundleIdentifier」。用了新证书却没改 Bundle ID，两者对不上时 iOS 会把**整份 entitlements 判为无效**，而不是只丢某一条，所以明明签进去的 HealthKit 也会报 missing。只有把 Bundle ID 改成描述文件授权的那个，权限才会生效。
+> 原因：用了新证书却没改 Bundle ID，iOS 会把**整份 entitlements 判为无效**，而不是只丢某一条，所以明明签进去的 HealthKit 也会报 missing。只有把 Bundle ID 改成描述文件授权的那个，权限才会生效。
 
 > 也有企业签等更便宜的方案，但企业签容易被苹果吊销（掉签），装完随时可能打不开；追求稳定优先选个人开发者账号代签。
 
@@ -88,7 +86,7 @@ IPA 是没有签名的，直接装不上，需要用下面任一方式签名。*
 
 | 测量结果 | 我的资料 |
 | :---: | :---: |
-| <img src="readme.assets/IMG_2593.PNG" width="300" alt="测量结果" /> | <img src="readme.assets/IMG_2592.PNG" width="300" alt="我的资料" /> |
+| <img src="readme.assets/IMG_2596.PNG" width="300" alt="测量结果" /> | <img src="readme.assets/IMG_2595.PNG" width="300" alt="我的资料" /> |
 
 ## 项目结构
 
